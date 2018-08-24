@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GeographyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Banca">
+          <Key>
+            <PropertyRef Name="IdBanca" />
+          </Key>
+          <Property Name="IdBanca" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CodBanca" Type="varchar" MaxLength="10" />
+          <Property Name="DescBanca" Type="varchar" MaxLength="1000" />
+          <Property Name="fk_Nazione_Id" Type="varchar" MaxLength="15" />
+          <Property Name="Abi" Type="varchar" MaxLength="10" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Comune">
+          <Key>
+            <PropertyRef Name="IdComune" />
+          </Key>
+          <Property Name="IdComune" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fk_Provincia_Id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CodComune" Type="varchar" MaxLength="10" />
+          <Property Name="DescComune" Type="varchar" MaxLength="100" />
+          <Property Name="CapGenerico" Type="varchar" MaxLength="5" />
+          <Property Name="CodIstat" Type="varchar" MaxLength="10" />
+          <Property Name="CodCatastale" Type="varchar" MaxLength="10" />
+          <Property Name="CodUfficioRegistro" Type="varchar" MaxLength="4" />
+          <Property Name="fk_AreaCompetenza_Id" Type="varchar" MaxLength="15" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Nazione">
+          <Key>
+            <PropertyRef Name="IdNazione" />
+          </Key>
+          <Property Name="IdNazione" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CodNazione" Type="varchar" MaxLength="10" />
+          <Property Name="DescNazione" Type="varchar" MaxLength="50" />
+          <Property Name="SiglaStatoNazione" Type="char" MaxLength="2" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fk_Regione_Id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CodProvincia" Type="varchar" MaxLength="4" />
+          <Property Name="DescProvincia" Type="varchar" MaxLength="50" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Regione">
+          <Key>
+            <PropertyRef Name="IdRegione" />
+          </Key>
+          <Property Name="IdRegione" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fk_Nazione_Id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CodRegione" Type="varchar" MaxLength="4" />
+          <Property Name="DescRegione" Type="varchar" MaxLength="50" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Utente">
+          <Key>
+            <PropertyRef Name="IdUtente" />
+          </Key>
+          <Property Name="IdUtente" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fk_AspNetUsers_Id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DescUtente" Type="varchar" MaxLength="1000" />
+          <Property Name="NomeUtente" Type="varchar" MaxLength="100" />
+          <Property Name="CognomeUtente" Type="varchar" MaxLength="100" />
+          <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+          <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+          <Property Name="DataCessato" Type="smalldatetime" />
+        </EntityType>
+        <Association Name="FK_Comune_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Comune" Type="Self.Comune" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="IdProvincia" />
+            </Principal>
+            <Dependent Role="Comune">
+              <PropertyRef Name="fk_Provincia_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provincia_Regione">
+          <End Role="Regione" Type="Self.Regione" Multiplicity="1" />
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regione">
+              <PropertyRef Name="IdRegione" />
+            </Principal>
+            <Dependent Role="Provincia">
+              <PropertyRef Name="fk_Regione_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regione_Nazione">
+          <End Role="Nazione" Type="Self.Nazione" Multiplicity="1" />
+          <End Role="Regione" Type="Self.Regione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nazione">
+              <PropertyRef Name="IdNazione" />
+            </Principal>
+            <Dependent Role="Regione">
+              <PropertyRef Name="fk_Nazione_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GeographyModelStoreContainer">
+          <EntitySet Name="Banca" EntityType="Self.Banca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comune" EntityType="Self.Comune" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nazione" EntityType="Self.Nazione" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regione" EntityType="Self.Regione" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utente" EntityType="Self.Utente" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comune_Provincia" Association="Self.FK_Comune_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Comune" EntitySet="Comune" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provincia_Regione" Association="Self.FK_Provincia_Regione">
+            <End Role="Regione" EntitySet="Regione" />
+            <End Role="Provincia" EntitySet="Provincia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regione_Nazione" Association="Self.FK_Regione_Nazione">
+            <End Role="Nazione" EntitySet="Nazione" />
+            <End Role="Regione" EntitySet="Regione" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GeographyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Banca">
+          <Key>
+            <PropertyRef Name="IdBanca" />
+          </Key>
+          <Property Name="IdBanca" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodBanca" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DescBanca" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="fk_Nazione_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Abi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Comune">
+          <Key>
+            <PropertyRef Name="IdComune" />
+          </Key>
+          <Property Name="IdComune" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_Provincia_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodComune" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DescComune" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CapGenerico" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CodIstat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CodCatastale" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CodUfficioRegistro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="fk_AreaCompetenza_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Comune_Provincia" FromRole="Comune" ToRole="Provincia" />
+        </EntityType>
+        <EntityType Name="Nazione">
+          <Key>
+            <PropertyRef Name="IdNazione" />
+          </Key>
+          <Property Name="IdNazione" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodNazione" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DescNazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SiglaStatoNazione" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Regione" Relationship="Self.FK_Regione_Nazione" FromRole="Nazione" ToRole="Regione" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_Regione_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodProvincia" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DescProvincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Comune" Relationship="Self.FK_Comune_Provincia" FromRole="Provincia" ToRole="Comune" />
+          <NavigationProperty Name="Regione" Relationship="Self.FK_Provincia_Regione" FromRole="Provincia" ToRole="Regione" />
+        </EntityType>
+        <EntityType Name="Regione">
+          <Key>
+            <PropertyRef Name="IdRegione" />
+          </Key>
+          <Property Name="IdRegione" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_Nazione_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodRegione" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DescRegione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Nazione" Relationship="Self.FK_Regione_Nazione" FromRole="Regione" ToRole="Nazione" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Provincia_Regione" FromRole="Regione" ToRole="Provincia" />
+        </EntityType>
+        <Association Name="FK_Comune_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Comune" Type="Self.Comune" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="IdProvincia" />
+            </Principal>
+            <Dependent Role="Comune">
+              <PropertyRef Name="fk_Provincia_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regione_Nazione">
+          <End Role="Nazione" Type="Self.Nazione" Multiplicity="1" />
+          <End Role="Regione" Type="Self.Regione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nazione">
+              <PropertyRef Name="IdNazione" />
+            </Principal>
+            <Dependent Role="Regione">
+              <PropertyRef Name="fk_Nazione_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provincia_Regione">
+          <End Role="Regione" Type="Self.Regione" Multiplicity="1" />
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regione">
+              <PropertyRef Name="IdRegione" />
+            </Principal>
+            <Dependent Role="Provincia">
+              <PropertyRef Name="fk_Regione_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GeographyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Banca" EntityType="Self.Banca" />
+          <EntitySet Name="Comune" EntityType="Self.Comune" />
+          <EntitySet Name="Nazione" EntityType="Self.Nazione" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+          <EntitySet Name="Regione" EntityType="Self.Regione" />
+          <AssociationSet Name="FK_Comune_Provincia" Association="Self.FK_Comune_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Comune" EntitySet="Comune" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regione_Nazione" Association="Self.FK_Regione_Nazione">
+            <End Role="Nazione" EntitySet="Nazione" />
+            <End Role="Regione" EntitySet="Regione" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provincia_Regione" Association="Self.FK_Provincia_Regione">
+            <End Role="Regione" EntitySet="Regione" />
+            <End Role="Provincia" EntitySet="Provincia" />
+          </AssociationSet>
+          <EntitySet Name="Utente" EntityType="GeographyModel.Utente" />
+        </EntityContainer>
+        <EntityType Name="Utente">
+          <Key>
+            <PropertyRef Name="IdUtente" />
+          </Key>
+          <Property Name="IdUtente" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="fk_AspNetUsers_Id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DescUtente" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NomeUtente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CognomeUtente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DataInserimento" Type="DateTime" Precision="7" />
+          <Property Name="DataAggiornamento" Type="DateTime" Precision="7" />
+          <Property Name="DataCessato" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GeographyModelStoreContainer" CdmEntityContainer="GeographyEntities">
+          <EntitySetMapping Name="Banca">
+            <EntityTypeMapping TypeName="GeographyModel.Banca">
+              <MappingFragment StoreEntitySet="Banca">
+                <ScalarProperty Name="IdBanca" ColumnName="IdBanca" />
+                <ScalarProperty Name="CodBanca" ColumnName="CodBanca" />
+                <ScalarProperty Name="DescBanca" ColumnName="DescBanca" />
+                <ScalarProperty Name="fk_Nazione_Id" ColumnName="fk_Nazione_Id" />
+                <ScalarProperty Name="Abi" ColumnName="Abi" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comune">
+            <EntityTypeMapping TypeName="GeographyModel.Comune">
+              <MappingFragment StoreEntitySet="Comune">
+                <ScalarProperty Name="IdComune" ColumnName="IdComune" />
+                <ScalarProperty Name="fk_Provincia_Id" ColumnName="fk_Provincia_Id" />
+                <ScalarProperty Name="CodComune" ColumnName="CodComune" />
+                <ScalarProperty Name="DescComune" ColumnName="DescComune" />
+                <ScalarProperty Name="CapGenerico" ColumnName="CapGenerico" />
+                <ScalarProperty Name="CodIstat" ColumnName="CodIstat" />
+                <ScalarProperty Name="CodCatastale" ColumnName="CodCatastale" />
+                <ScalarProperty Name="CodUfficioRegistro" ColumnName="CodUfficioRegistro" />
+                <ScalarProperty Name="fk_AreaCompetenza_Id" ColumnName="fk_AreaCompetenza_Id" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nazione">
+            <EntityTypeMapping TypeName="GeographyModel.Nazione">
+              <MappingFragment StoreEntitySet="Nazione">
+                <ScalarProperty Name="IdNazione" ColumnName="IdNazione" />
+                <ScalarProperty Name="CodNazione" ColumnName="CodNazione" />
+                <ScalarProperty Name="DescNazione" ColumnName="DescNazione" />
+                <ScalarProperty Name="SiglaStatoNazione" ColumnName="SiglaStatoNazione" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincia">
+            <EntityTypeMapping TypeName="GeographyModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+                <ScalarProperty Name="fk_Regione_Id" ColumnName="fk_Regione_Id" />
+                <ScalarProperty Name="CodProvincia" ColumnName="CodProvincia" />
+                <ScalarProperty Name="DescProvincia" ColumnName="DescProvincia" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regione">
+            <EntityTypeMapping TypeName="GeographyModel.Regione">
+              <MappingFragment StoreEntitySet="Regione">
+                <ScalarProperty Name="IdRegione" ColumnName="IdRegione" />
+                <ScalarProperty Name="fk_Nazione_Id" ColumnName="fk_Nazione_Id" />
+                <ScalarProperty Name="CodRegione" ColumnName="CodRegione" />
+                <ScalarProperty Name="DescRegione" ColumnName="DescRegione" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utente">
+            <EntityTypeMapping TypeName="GeographyModel.Utente">
+              <MappingFragment StoreEntitySet="Utente">
+                <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+                <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="CognomeUtente" ColumnName="CognomeUtente" />
+                <ScalarProperty Name="NomeUtente" ColumnName="NomeUtente" />
+                <ScalarProperty Name="DescUtente" ColumnName="DescUtente" />
+                <ScalarProperty Name="fk_AspNetUsers_Id" ColumnName="fk_AspNetUsers_Id" />
+                <ScalarProperty Name="IdUtente" ColumnName="IdUtente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

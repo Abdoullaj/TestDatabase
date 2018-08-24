@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealGimm_Test_AGUIARIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FGT_TicketIntervento">
+    <Key>
+      <PropertyRef Name="IdFGT_TicketIntervento" />
+    </Key>
+    <Property Name="IdFGT_TicketIntervento" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GuidTicketIntervento" Type="Guid" Nullable="false" />
+    <Property Name="fk_SysTras_StatoPrecedenteTicket_Id" Type="Int32" />
+    <Property Name="fk_CentroDiCosto_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fk_FGA_Contratto_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FlagMail" Type="Boolean" />
+    <Property Name="FlagNotifica" Type="Boolean" />
+    <Property Name="fk_CentroDiCostoFrazionari_id" Type="Int32" Nullable="false" />
+    <Property Name="fk_Utente_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DescRichiedente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fk_Immobile_id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fk_SysTras_PrioritaTicket_Richiedente_Id" Type="Int32" Nullable="false" />
+    <Property Name="fk_SysTras_TipoContattoTicket_Id" Type="Int32" Nullable="false" />
+    <Property Name="TelRichiedente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailRichiedente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descrizione" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Soggetto_Fornitore_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fk_FGT_TicketIntervento_Collegato_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Piano" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Settore" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Stanza" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSist_TipologiaUfficio_Id" Type="Int32" />
+    <Property Name="fk_FGO_Componente_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PosizioneMatricola" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MatricolaStoricizzata" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSist_TipologiaTicket_Id" Type="Int32" Nullable="false" />
+    <Property Name="fk_SysTras_PrioritaTicket_Id" Type="Int32" />
+    <Property Name="fk_SysTras_StatoTicket_Id" Type="Int32" Nullable="false" />
+    <Property Name="fk_AnagSist_Facility_AnagraficaServizi_Id" Type="Int32" Nullable="false" />
+    <Property Name="fk_FGA_AnagraficaSottoservizi_Id" Type="Int32" />
+    <Property Name="fk_FGA_Oggetto_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FlagSicurezzaLavoro" Type="Boolean" />
+    <Property Name="fk_FGA_ContrattoAccordiQuadro_Id" Type="Int32" />
+    <Property Name="AccordoQuadroSap" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PosizioneAccordoQuadroSap" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="fk_FGA_SquadraFornitore_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DescCapoSquadra" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DataMaxIntervento" Type="DateTime" Precision="0" />
+    <Property Name="FlagExtraCanone" Type="Boolean" />
+    <Property Name="DataRichiesta" Type="DateTime" Precision="0" />
+    <Property Name="DataInserimento" Type="DateTime" Precision="0" />
+    <Property Name="DataPresaInCarico" Type="DateTime" Precision="0" />
+    <Property Name="DataExtraCanone" Type="DateTime" Precision="0" />
+    <Property Name="DataChiusura" Type="DateTime" Precision="0" />
+    <Property Name="DataContabilizzato" Type="DateTime" Precision="0" />
+    <Property Name="DataAnnullamento" Type="DateTime" Precision="0" />
+    <Property Name="DataInizioSosp" Type="DateTime" Precision="0" />
+    <Property Name="DataFineSosp" Type="DateTime" Precision="0" />
+    <Property Name="DataAnnullatoNonCompetenza" Type="DateTime" Precision="0" />
+    <Property Name="DataAltroFornitoreDanno" Type="DateTime" Precision="0" />
+    <Property Name="DataAnnullatoCompIngegneria" Type="DateTime" Precision="0" />
+    <Property Name="FlagSollecito1" Type="Boolean" />
+    <Property Name="FlagSollecito2" Type="Boolean" />
+    <Property Name="FlagSollecito3" Type="Boolean" />
+    <Property Name="DataSollecito1" Type="DateTime" Precision="0" />
+    <Property Name="DataSollecito2" Type="DateTime" Precision="0" />
+    <Property Name="DataSollecito3" Type="DateTime" Precision="0" />
+    <Property Name="Note1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Note2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Note3" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ImportoPrevExtraCanone" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="ImportoConsExtraCanone" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="fk_SysTras_ClassificazioneTicket_Id" Type="Int32" />
+    <Property Name="fk_SysTras_StatoPreventivoTicket_Id" Type="Int32" />
+    <Property Name="InterventoExtraCanoneEntroIl" Type="DateTime" Precision="0" />
+    <Property Name="RDA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PosizioneOda" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ImportoBdc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ImportoEntrataMerci" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="NotePreventivo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSist_GruppoMerci_Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSist_CodiceProgetto_Id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSist_ContoCoge_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Promemoria" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FlagPromemoriaStampato" Type="Boolean" />
+    <Property Name="DataFlagPromemoriaStampato" Type="DateTime" Precision="0" />
+    <Property Name="FlagRdAStampata" Type="Boolean" />
+    <Property Name="DataFlagRdaStampata" Type="DateTime" Precision="0" />
+    <Property Name="FlagEntrataMerciStampata" Type="Boolean" />
+    <Property Name="DataFlagEntrataMerciStampata" Type="DateTime" Precision="3" />
+    <Property Name="DataFlagEntrataMerciStampata_New" Type="DateTime" Precision="3" />
+    <Property Name="FlagModelloEStampato" Type="Boolean" />
+    <Property Name="DataFlagModelloEStampato" Type="DateTime" Precision="3" />
+    <Property Name="DataDaAccettare" Type="DateTime" Precision="0" />
+    <Property Name="DataAccettato" Type="DateTime" Precision="0" />
+    <Property Name="DataRifiutato" Type="DateTime" Precision="0" />
+    <Property Name="fk_FGT_TicketInterventoPreventivo_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DataInizioSospesoBudgetTecnici" Type="DateTime" Precision="0" />
+    <Property Name="DataFineSospesoBudgetTecnici" Type="DateTime" Precision="0" />
+    <Property Name="IdBpm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatoBpm" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DataInizioIntervento" Type="DateTime" Precision="0" />
+    <Property Name="DataFineIntervento" Type="DateTime" Precision="0" />
+    <Property Name="ChiusuraEffettiva" Type="DateTime" Precision="0" />
+    <Property Name="OperazioniEffettuate" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnosi" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialiSostituiti" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DescrizioneRisoluzione" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AnagSis_Qualifiche1_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NumOperaiQualifica1" Type="Int32" />
+    <Property Name="fk_AnagSis_Qualifiche2_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NumOperaiQualifica2" Type="Int32" />
+    <Property Name="fk_AnagSis_Qualifiche3_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NumOperaiQualifica3" Type="Int32" />
+    <Property Name="fk_SysTras_GiudizioTicket_Caldo_Id" Type="Int32" />
+    <Property Name="fk_SysTras_StatoDopoIntervento_Id" Type="Int32" />
+    <Property Name="DataBM" Type="DateTime" Precision="0" />
+    <Property Name="fk_SysTras_GiudizioTicket_Freddo_Id" Type="Int32" />
+    <Property Name="NoteSoddisfazioneAFreddo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fk_SysTras_PrioritaTicket_BM_Id" Type="Int32" />
+    <Property Name="NotePrioritaBM" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DataAggiornamento" Type="DateTime" Precision="0" />
+    <Property Name="ImportoLiquidabile" Type="Decimal" Precision="13" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="ProvaDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FGT_TicketIntervento" EntityType="Self.FGT_TicketIntervento" />
+    <EntitySet Name="Comune" EntityType="RealGimm_Test_AGUIARIModel.Comune" />
+  </EntityContainer>
+  <EntityType Name="Comune">
+    <Key>
+      <PropertyRef Name="IdComune" />
+    </Key>
+    <Property Name="IdComune" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Provincia_Id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CodComune" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DescComune" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CapGenerico" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CodIstat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodCatastale" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodUfficioRegistro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="fk_AreaCompetenza_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DataInserimento" Type="DateTime" Precision="0" />
+    <Property Name="DataAggiornamento" Type="DateTime" Precision="0" />
+    <Property Name="DataCessato" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

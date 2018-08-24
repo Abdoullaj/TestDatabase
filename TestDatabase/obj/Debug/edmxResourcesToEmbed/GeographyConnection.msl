@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GeographyModelStoreContainer" CdmEntityContainer="GeographyEntities">
+    <EntitySetMapping Name="Banca">
+      <EntityTypeMapping TypeName="GeographyModel.Banca">
+        <MappingFragment StoreEntitySet="Banca">
+          <ScalarProperty Name="IdBanca" ColumnName="IdBanca" />
+          <ScalarProperty Name="CodBanca" ColumnName="CodBanca" />
+          <ScalarProperty Name="DescBanca" ColumnName="DescBanca" />
+          <ScalarProperty Name="fk_Nazione_Id" ColumnName="fk_Nazione_Id" />
+          <ScalarProperty Name="Abi" ColumnName="Abi" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comune">
+      <EntityTypeMapping TypeName="GeographyModel.Comune">
+        <MappingFragment StoreEntitySet="Comune">
+          <ScalarProperty Name="IdComune" ColumnName="IdComune" />
+          <ScalarProperty Name="fk_Provincia_Id" ColumnName="fk_Provincia_Id" />
+          <ScalarProperty Name="CodComune" ColumnName="CodComune" />
+          <ScalarProperty Name="DescComune" ColumnName="DescComune" />
+          <ScalarProperty Name="CapGenerico" ColumnName="CapGenerico" />
+          <ScalarProperty Name="CodIstat" ColumnName="CodIstat" />
+          <ScalarProperty Name="CodCatastale" ColumnName="CodCatastale" />
+          <ScalarProperty Name="CodUfficioRegistro" ColumnName="CodUfficioRegistro" />
+          <ScalarProperty Name="fk_AreaCompetenza_Id" ColumnName="fk_AreaCompetenza_Id" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nazione">
+      <EntityTypeMapping TypeName="GeographyModel.Nazione">
+        <MappingFragment StoreEntitySet="Nazione">
+          <ScalarProperty Name="IdNazione" ColumnName="IdNazione" />
+          <ScalarProperty Name="CodNazione" ColumnName="CodNazione" />
+          <ScalarProperty Name="DescNazione" ColumnName="DescNazione" />
+          <ScalarProperty Name="SiglaStatoNazione" ColumnName="SiglaStatoNazione" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincia">
+      <EntityTypeMapping TypeName="GeographyModel.Provincia">
+        <MappingFragment StoreEntitySet="Provincia">
+          <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+          <ScalarProperty Name="fk_Regione_Id" ColumnName="fk_Regione_Id" />
+          <ScalarProperty Name="CodProvincia" ColumnName="CodProvincia" />
+          <ScalarProperty Name="DescProvincia" ColumnName="DescProvincia" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regione">
+      <EntityTypeMapping TypeName="GeographyModel.Regione">
+        <MappingFragment StoreEntitySet="Regione">
+          <ScalarProperty Name="IdRegione" ColumnName="IdRegione" />
+          <ScalarProperty Name="fk_Nazione_Id" ColumnName="fk_Nazione_Id" />
+          <ScalarProperty Name="CodRegione" ColumnName="CodRegione" />
+          <ScalarProperty Name="DescRegione" ColumnName="DescRegione" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utente">
+      <EntityTypeMapping TypeName="GeographyModel.Utente">
+        <MappingFragment StoreEntitySet="Utente">
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="CognomeUtente" ColumnName="CognomeUtente" />
+          <ScalarProperty Name="NomeUtente" ColumnName="NomeUtente" />
+          <ScalarProperty Name="DescUtente" ColumnName="DescUtente" />
+          <ScalarProperty Name="fk_AspNetUsers_Id" ColumnName="fk_AspNetUsers_Id" />
+          <ScalarProperty Name="IdUtente" ColumnName="IdUtente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

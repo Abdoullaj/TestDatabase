@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealGimm_Test_AGUIARIModelStoreContainer" CdmEntityContainer="ProvaDbContext">
+    <EntitySetMapping Name="FGT_TicketIntervento">
+      <EntityTypeMapping TypeName="RealGimm_Test_AGUIARIModel.FGT_TicketIntervento">
+        <MappingFragment StoreEntitySet="FGT_TicketIntervento">
+          <ScalarProperty Name="IdFGT_TicketIntervento" ColumnName="IdFGT_TicketIntervento" />
+          <ScalarProperty Name="GuidTicketIntervento" ColumnName="GuidTicketIntervento" />
+          <ScalarProperty Name="fk_SysTras_StatoPrecedenteTicket_Id" ColumnName="fk_SysTras_StatoPrecedenteTicket_Id" />
+          <ScalarProperty Name="fk_CentroDiCosto_Id" ColumnName="fk_CentroDiCosto_Id" />
+          <ScalarProperty Name="fk_FGA_Contratto_Id" ColumnName="fk_FGA_Contratto_Id" />
+          <ScalarProperty Name="FlagMail" ColumnName="FlagMail" />
+          <ScalarProperty Name="FlagNotifica" ColumnName="FlagNotifica" />
+          <ScalarProperty Name="fk_CentroDiCostoFrazionari_id" ColumnName="fk_CentroDiCostoFrazionari_id" />
+          <ScalarProperty Name="fk_Utente_Id" ColumnName="fk_Utente_Id" />
+          <ScalarProperty Name="DescRichiedente" ColumnName="DescRichiedente" />
+          <ScalarProperty Name="fk_Immobile_id" ColumnName="fk_Immobile_id" />
+          <ScalarProperty Name="fk_SysTras_PrioritaTicket_Richiedente_Id" ColumnName="fk_SysTras_PrioritaTicket_Richiedente_Id" />
+          <ScalarProperty Name="fk_SysTras_TipoContattoTicket_Id" ColumnName="fk_SysTras_TipoContattoTicket_Id" />
+          <ScalarProperty Name="TelRichiedente" ColumnName="TelRichiedente" />
+          <ScalarProperty Name="EmailRichiedente" ColumnName="EmailRichiedente" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="fk_Soggetto_Fornitore_Id" ColumnName="fk_Soggetto_Fornitore_Id" />
+          <ScalarProperty Name="fk_FGT_TicketIntervento_Collegato_Id" ColumnName="fk_FGT_TicketIntervento_Collegato_Id" />
+          <ScalarProperty Name="Piano" ColumnName="Piano" />
+          <ScalarProperty Name="Settore" ColumnName="Settore" />
+          <ScalarProperty Name="Stanza" ColumnName="Stanza" />
+          <ScalarProperty Name="fk_AnagSist_TipologiaUfficio_Id" ColumnName="fk_AnagSist_TipologiaUfficio_Id" />
+          <ScalarProperty Name="fk_FGO_Componente_Id" ColumnName="fk_FGO_Componente_Id" />
+          <ScalarProperty Name="PosizioneMatricola" ColumnName="PosizioneMatricola" />
+          <ScalarProperty Name="MatricolaStoricizzata" ColumnName="MatricolaStoricizzata" />
+          <ScalarProperty Name="fk_AnagSist_TipologiaTicket_Id" ColumnName="fk_AnagSist_TipologiaTicket_Id" />
+          <ScalarProperty Name="fk_SysTras_PrioritaTicket_Id" ColumnName="fk_SysTras_PrioritaTicket_Id" />
+          <ScalarProperty Name="fk_SysTras_StatoTicket_Id" ColumnName="fk_SysTras_StatoTicket_Id" />
+          <ScalarProperty Name="fk_AnagSist_Facility_AnagraficaServizi_Id" ColumnName="fk_AnagSist_Facility_AnagraficaServizi_Id" />
+          <ScalarProperty Name="fk_FGA_AnagraficaSottoservizi_Id" ColumnName="fk_FGA_AnagraficaSottoservizi_Id" />
+          <ScalarProperty Name="fk_FGA_Oggetto_Id" ColumnName="fk_FGA_Oggetto_Id" />
+          <ScalarProperty Name="FlagSicurezzaLavoro" ColumnName="FlagSicurezzaLavoro" />
+          <ScalarProperty Name="fk_FGA_ContrattoAccordiQuadro_Id" ColumnName="fk_FGA_ContrattoAccordiQuadro_Id" />
+          <ScalarProperty Name="AccordoQuadroSap" ColumnName="AccordoQuadroSap" />
+          <ScalarProperty Name="PosizioneAccordoQuadroSap" ColumnName="PosizioneAccordoQuadroSap" />
+          <ScalarProperty Name="fk_FGA_SquadraFornitore_Id" ColumnName="fk_FGA_SquadraFornitore_Id" />
+          <ScalarProperty Name="DescCapoSquadra" ColumnName="DescCapoSquadra" />
+          <ScalarProperty Name="DataMaxIntervento" ColumnName="DataMaxIntervento" />
+          <ScalarProperty Name="FlagExtraCanone" ColumnName="FlagExtraCanone" />
+          <ScalarProperty Name="DataRichiesta" ColumnName="DataRichiesta" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="DataPresaInCarico" ColumnName="DataPresaInCarico" />
+          <ScalarProperty Name="DataExtraCanone" ColumnName="DataExtraCanone" />
+          <ScalarProperty Name="DataChiusura" ColumnName="DataChiusura" />
+          <ScalarProperty Name="DataContabilizzato" ColumnName="DataContabilizzato" />
+          <ScalarProperty Name="DataAnnullamento" ColumnName="DataAnnullamento" />
+          <ScalarProperty Name="DataInizioSosp" ColumnName="DataInizioSosp" />
+          <ScalarProperty Name="DataFineSosp" ColumnName="DataFineSosp" />
+          <ScalarProperty Name="DataAnnullatoNonCompetenza" ColumnName="DataAnnullatoNonCompetenza" />
+          <ScalarProperty Name="DataAltroFornitoreDanno" ColumnName="DataAltroFornitoreDanno" />
+          <ScalarProperty Name="DataAnnullatoCompIngegneria" ColumnName="DataAnnullatoCompIngegneria" />
+          <ScalarProperty Name="FlagSollecito1" ColumnName="FlagSollecito1" />
+          <ScalarProperty Name="FlagSollecito2" ColumnName="FlagSollecito2" />
+          <ScalarProperty Name="FlagSollecito3" ColumnName="FlagSollecito3" />
+          <ScalarProperty Name="DataSollecito1" ColumnName="DataSollecito1" />
+          <ScalarProperty Name="DataSollecito2" ColumnName="DataSollecito2" />
+          <ScalarProperty Name="DataSollecito3" ColumnName="DataSollecito3" />
+          <ScalarProperty Name="Note1" ColumnName="Note1" />
+          <ScalarProperty Name="Note2" ColumnName="Note2" />
+          <ScalarProperty Name="Note3" ColumnName="Note3" />
+          <ScalarProperty Name="ImportoPrevExtraCanone" ColumnName="ImportoPrevExtraCanone" />
+          <ScalarProperty Name="ImportoConsExtraCanone" ColumnName="ImportoConsExtraCanone" />
+          <ScalarProperty Name="fk_SysTras_ClassificazioneTicket_Id" ColumnName="fk_SysTras_ClassificazioneTicket_Id" />
+          <ScalarProperty Name="fk_SysTras_StatoPreventivoTicket_Id" ColumnName="fk_SysTras_StatoPreventivoTicket_Id" />
+          <ScalarProperty Name="InterventoExtraCanoneEntroIl" ColumnName="InterventoExtraCanoneEntroIl" />
+          <ScalarProperty Name="RDA" ColumnName="RDA" />
+          <ScalarProperty Name="PosizioneOda" ColumnName="PosizioneOda" />
+          <ScalarProperty Name="ImportoBdc" ColumnName="ImportoBdc" />
+          <ScalarProperty Name="ImportoEntrataMerci" ColumnName="ImportoEntrataMerci" />
+          <ScalarProperty Name="NotePreventivo" ColumnName="NotePreventivo" />
+          <ScalarProperty Name="fk_AnagSist_GruppoMerci_Id" ColumnName="fk_AnagSist_GruppoMerci_Id" />
+          <ScalarProperty Name="fk_AnagSist_CodiceProgetto_Id" ColumnName="fk_AnagSist_CodiceProgetto_Id" />
+          <ScalarProperty Name="fk_AnagSist_ContoCoge_Id" ColumnName="fk_AnagSist_ContoCoge_Id" />
+          <ScalarProperty Name="Promemoria" ColumnName="Promemoria" />
+          <ScalarProperty Name="FlagPromemoriaStampato" ColumnName="FlagPromemoriaStampato" />
+          <ScalarProperty Name="DataFlagPromemoriaStampato" ColumnName="DataFlagPromemoriaStampato" />
+          <ScalarProperty Name="FlagRdAStampata" ColumnName="FlagRdAStampata" />
+          <ScalarProperty Name="DataFlagRdaStampata" ColumnName="DataFlagRdaStampata" />
+          <ScalarProperty Name="FlagEntrataMerciStampata" ColumnName="FlagEntrataMerciStampata" />
+          <ScalarProperty Name="DataFlagEntrataMerciStampata" ColumnName="DataFlagEntrataMerciStampata" />
+          <ScalarProperty Name="DataFlagEntrataMerciStampata_New" ColumnName="DataFlagEntrataMerciStampata_New" />
+          <ScalarProperty Name="FlagModelloEStampato" ColumnName="FlagModelloEStampato" />
+          <ScalarProperty Name="DataFlagModelloEStampato" ColumnName="DataFlagModelloEStampato" />
+          <ScalarProperty Name="DataDaAccettare" ColumnName="DataDaAccettare" />
+          <ScalarProperty Name="DataAccettato" ColumnName="DataAccettato" />
+          <ScalarProperty Name="DataRifiutato" ColumnName="DataRifiutato" />
+          <ScalarProperty Name="fk_FGT_TicketInterventoPreventivo_Id" ColumnName="fk_FGT_TicketInterventoPreventivo_Id" />
+          <ScalarProperty Name="DataInizioSospesoBudgetTecnici" ColumnName="DataInizioSospesoBudgetTecnici" />
+          <ScalarProperty Name="DataFineSospesoBudgetTecnici" ColumnName="DataFineSospesoBudgetTecnici" />
+          <ScalarProperty Name="IdBpm" ColumnName="IdBpm" />
+          <ScalarProperty Name="StatoBpm" ColumnName="StatoBpm" />
+          <ScalarProperty Name="DataInizioIntervento" ColumnName="DataInizioIntervento" />
+          <ScalarProperty Name="DataFineIntervento" ColumnName="DataFineIntervento" />
+          <ScalarProperty Name="ChiusuraEffettiva" ColumnName="ChiusuraEffettiva" />
+          <ScalarProperty Name="OperazioniEffettuate" ColumnName="OperazioniEffettuate" />
+          <ScalarProperty Name="Diagnosi" ColumnName="Diagnosi" />
+          <ScalarProperty Name="MaterialiSostituiti" ColumnName="MaterialiSostituiti" />
+          <ScalarProperty Name="DescrizioneRisoluzione" ColumnName="DescrizioneRisoluzione" />
+          <ScalarProperty Name="fk_AnagSis_Qualifiche1_Id" ColumnName="fk_AnagSis_Qualifiche1_Id" />
+          <ScalarProperty Name="NumOperaiQualifica1" ColumnName="NumOperaiQualifica1" />
+          <ScalarProperty Name="fk_AnagSis_Qualifiche2_Id" ColumnName="fk_AnagSis_Qualifiche2_Id" />
+          <ScalarProperty Name="NumOperaiQualifica2" ColumnName="NumOperaiQualifica2" />
+          <ScalarProperty Name="fk_AnagSis_Qualifiche3_Id" ColumnName="fk_AnagSis_Qualifiche3_Id" />
+          <ScalarProperty Name="NumOperaiQualifica3" ColumnName="NumOperaiQualifica3" />
+          <ScalarProperty Name="fk_SysTras_GiudizioTicket_Caldo_Id" ColumnName="fk_SysTras_GiudizioTicket_Caldo_Id" />
+          <ScalarProperty Name="fk_SysTras_StatoDopoIntervento_Id" ColumnName="fk_SysTras_StatoDopoIntervento_Id" />
+          <ScalarProperty Name="DataBM" ColumnName="DataBM" />
+          <ScalarProperty Name="fk_SysTras_GiudizioTicket_Freddo_Id" ColumnName="fk_SysTras_GiudizioTicket_Freddo_Id" />
+          <ScalarProperty Name="NoteSoddisfazioneAFreddo" ColumnName="NoteSoddisfazioneAFreddo" />
+          <ScalarProperty Name="fk_SysTras_PrioritaTicket_BM_Id" ColumnName="fk_SysTras_PrioritaTicket_BM_Id" />
+          <ScalarProperty Name="NotePrioritaBM" ColumnName="NotePrioritaBM" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="ImportoLiquidabile" ColumnName="ImportoLiquidabile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comune">
+      <EntityTypeMapping TypeName="RealGimm_Test_AGUIARIModel.Comune">
+        <MappingFragment StoreEntitySet="Comune">
+          <ScalarProperty Name="DataCessato" ColumnName="DataCessato" />
+          <ScalarProperty Name="DataAggiornamento" ColumnName="DataAggiornamento" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="fk_AreaCompetenza_Id" ColumnName="fk_AreaCompetenza_Id" />
+          <ScalarProperty Name="CodUfficioRegistro" ColumnName="CodUfficioRegistro" />
+          <ScalarProperty Name="CodCatastale" ColumnName="CodCatastale" />
+          <ScalarProperty Name="CodIstat" ColumnName="CodIstat" />
+          <ScalarProperty Name="CapGenerico" ColumnName="CapGenerico" />
+          <ScalarProperty Name="DescComune" ColumnName="DescComune" />
+          <ScalarProperty Name="CodComune" ColumnName="CodComune" />
+          <ScalarProperty Name="fk_Provincia_Id" ColumnName="fk_Provincia_Id" />
+          <ScalarProperty Name="IdComune" ColumnName="IdComune" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

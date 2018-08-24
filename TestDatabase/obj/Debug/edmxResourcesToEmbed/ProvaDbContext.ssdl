@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealGimm_Test_AGUIARIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comune">
+    <Key>
+      <PropertyRef Name="IdComune" />
+    </Key>
+    <Property Name="IdComune" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_Provincia_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodComune" Type="varchar" MaxLength="10" />
+    <Property Name="DescComune" Type="varchar" MaxLength="100" />
+    <Property Name="CapGenerico" Type="varchar" MaxLength="5" />
+    <Property Name="CodIstat" Type="varchar" MaxLength="10" />
+    <Property Name="CodCatastale" Type="varchar" MaxLength="10" />
+    <Property Name="CodUfficioRegistro" Type="varchar" MaxLength="4" />
+    <Property Name="fk_AreaCompetenza_Id" Type="varchar" MaxLength="15" />
+    <Property Name="DataInserimento" Type="smalldatetime" />
+    <Property Name="DataAggiornamento" Type="smalldatetime" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="FGT_TicketIntervento">
+    <Key>
+      <PropertyRef Name="IdFGT_TicketIntervento" />
+    </Key>
+    <Property Name="IdFGT_TicketIntervento" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="GuidTicketIntervento" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="fk_SysTras_StatoPrecedenteTicket_Id" Type="int" />
+    <Property Name="fk_CentroDiCosto_Id" Type="varchar" MaxLength="15" />
+    <Property Name="fk_FGA_Contratto_Id" Type="varchar" MaxLength="15" />
+    <Property Name="FlagMail" Type="bit" />
+    <Property Name="FlagNotifica" Type="bit" />
+    <Property Name="fk_CentroDiCostoFrazionari_id" Type="int" Nullable="false" />
+    <Property Name="fk_Utente_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DescRichiedente" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fk_Immobile_id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_SysTras_PrioritaTicket_Richiedente_Id" Type="int" Nullable="false" />
+    <Property Name="fk_SysTras_TipoContattoTicket_Id" Type="int" Nullable="false" />
+    <Property Name="TelRichiedente" Type="varchar" MaxLength="100" />
+    <Property Name="EmailRichiedente" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descrizione" Type="varchar" MaxLength="1000" />
+    <Property Name="fk_Soggetto_Fornitore_Id" Type="varchar" MaxLength="15" />
+    <Property Name="fk_FGT_TicketIntervento_Collegato_Id" Type="varchar" MaxLength="15" />
+    <Property Name="Piano" Type="varchar" MaxLength="1000" />
+    <Property Name="Settore" Type="varchar" MaxLength="1000" />
+    <Property Name="Stanza" Type="varchar" MaxLength="1000" />
+    <Property Name="fk_AnagSist_TipologiaUfficio_Id" Type="int" />
+    <Property Name="fk_FGO_Componente_Id" Type="varchar" MaxLength="15" />
+    <Property Name="PosizioneMatricola" Type="varchar" MaxLength="15" />
+    <Property Name="MatricolaStoricizzata" Type="varchar" MaxLength="2000" />
+    <Property Name="fk_AnagSist_TipologiaTicket_Id" Type="int" Nullable="false" />
+    <Property Name="fk_SysTras_PrioritaTicket_Id" Type="int" />
+    <Property Name="fk_SysTras_StatoTicket_Id" Type="int" Nullable="false" />
+    <Property Name="fk_AnagSist_Facility_AnagraficaServizi_Id" Type="int" Nullable="false" />
+    <Property Name="fk_FGA_AnagraficaSottoservizi_Id" Type="int" />
+    <Property Name="fk_FGA_Oggetto_Id" Type="varchar" MaxLength="15" />
+    <Property Name="FlagSicurezzaLavoro" Type="bit" />
+    <Property Name="fk_FGA_ContrattoAccordiQuadro_Id" Type="int" />
+    <Property Name="AccordoQuadroSap" Type="varchar" MaxLength="10" />
+    <Property Name="PosizioneAccordoQuadroSap" Type="varchar" MaxLength="5" />
+    <Property Name="fk_FGA_SquadraFornitore_Id" Type="varchar" MaxLength="15" />
+    <Property Name="DescCapoSquadra" Type="varchar" MaxLength="1000" />
+    <Property Name="DataMaxIntervento" Type="smalldatetime" />
+    <Property Name="FlagExtraCanone" Type="bit" />
+    <Property Name="DataRichiesta" Type="smalldatetime" />
+    <Property Name="DataInserimento" Type="smalldatetime" />
+    <Property Name="DataPresaInCarico" Type="smalldatetime" />
+    <Property Name="DataExtraCanone" Type="smalldatetime" />
+    <Property Name="DataChiusura" Type="smalldatetime" />
+    <Property Name="DataContabilizzato" Type="smalldatetime" />
+    <Property Name="DataAnnullamento" Type="smalldatetime" />
+    <Property Name="DataInizioSosp" Type="smalldatetime" />
+    <Property Name="DataFineSosp" Type="smalldatetime" />
+    <Property Name="DataAnnullatoNonCompetenza" Type="smalldatetime" />
+    <Property Name="DataAltroFornitoreDanno" Type="smalldatetime" />
+    <Property Name="DataAnnullatoCompIngegneria" Type="smalldatetime" />
+    <Property Name="FlagSollecito1" Type="bit" />
+    <Property Name="FlagSollecito2" Type="bit" />
+    <Property Name="FlagSollecito3" Type="bit" />
+    <Property Name="DataSollecito1" Type="smalldatetime" />
+    <Property Name="DataSollecito2" Type="smalldatetime" />
+    <Property Name="DataSollecito3" Type="smalldatetime" />
+    <Property Name="Note1" Type="varchar" MaxLength="1000" />
+    <Property Name="Note2" Type="varchar" MaxLength="1000" />
+    <Property Name="Note3" Type="varchar" MaxLength="1000" />
+    <Property Name="ImportoPrevExtraCanone" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="ImportoConsExtraCanone" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="fk_SysTras_ClassificazioneTicket_Id" Type="int" />
+    <Property Name="fk_SysTras_StatoPreventivoTicket_Id" Type="int" />
+    <Property Name="InterventoExtraCanoneEntroIl" Type="smalldatetime" />
+    <Property Name="RDA" Type="varchar" MaxLength="1000" />
+    <Property Name="PosizioneOda" Type="varchar" MaxLength="5" />
+    <Property Name="ImportoBdc" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ImportoEntrataMerci" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="NotePreventivo" Type="varchar" MaxLength="1000" />
+    <Property Name="fk_AnagSist_GruppoMerci_Id" Type="varchar" MaxLength="20" />
+    <Property Name="fk_AnagSist_CodiceProgetto_Id" Type="varchar" MaxLength="12" />
+    <Property Name="fk_AnagSist_ContoCoge_Id" Type="varchar" MaxLength="15" />
+    <Property Name="Promemoria" Type="varchar" MaxLength="1000" />
+    <Property Name="FlagPromemoriaStampato" Type="bit" />
+    <Property Name="DataFlagPromemoriaStampato" Type="smalldatetime" />
+    <Property Name="FlagRdAStampata" Type="bit" />
+    <Property Name="DataFlagRdaStampata" Type="smalldatetime" />
+    <Property Name="FlagEntrataMerciStampata" Type="bit" />
+    <Property Name="DataFlagEntrataMerciStampata" Type="datetime" />
+    <Property Name="DataFlagEntrataMerciStampata_New" Type="datetime" />
+    <Property Name="FlagModelloEStampato" Type="bit" />
+    <Property Name="DataFlagModelloEStampato" Type="datetime" />
+    <Property Name="DataDaAccettare" Type="smalldatetime" />
+    <Property Name="DataAccettato" Type="smalldatetime" />
+    <Property Name="DataRifiutato" Type="smalldatetime" />
+    <Property Name="fk_FGT_TicketInterventoPreventivo_Id" Type="varchar" MaxLength="15" />
+    <Property Name="DataInizioSospesoBudgetTecnici" Type="smalldatetime" />
+    <Property Name="DataFineSospesoBudgetTecnici" Type="smalldatetime" />
+    <Property Name="IdBpm" Type="varchar" MaxLength="10" />
+    <Property Name="StatoBpm" Type="varchar" MaxLength="1000" />
+    <Property Name="DataInizioIntervento" Type="smalldatetime" />
+    <Property Name="DataFineIntervento" Type="smalldatetime" />
+    <Property Name="ChiusuraEffettiva" Type="smalldatetime" />
+    <Property Name="OperazioniEffettuate" Type="varchar" MaxLength="1000" />
+    <Property Name="Diagnosi" Type="varchar" MaxLength="1000" />
+    <Property Name="MaterialiSostituiti" Type="varchar" MaxLength="1000" />
+    <Property Name="DescrizioneRisoluzione" Type="varchar" MaxLength="1000" />
+    <Property Name="fk_AnagSis_Qualifiche1_Id" Type="varchar" MaxLength="10" />
+    <Property Name="NumOperaiQualifica1" Type="int" />
+    <Property Name="fk_AnagSis_Qualifiche2_Id" Type="varchar" MaxLength="10" />
+    <Property Name="NumOperaiQualifica2" Type="int" />
+    <Property Name="fk_AnagSis_Qualifiche3_Id" Type="varchar" MaxLength="10" />
+    <Property Name="NumOperaiQualifica3" Type="int" />
+    <Property Name="fk_SysTras_GiudizioTicket_Caldo_Id" Type="int" />
+    <Property Name="fk_SysTras_StatoDopoIntervento_Id" Type="int" />
+    <Property Name="DataBM" Type="smalldatetime" />
+    <Property Name="fk_SysTras_GiudizioTicket_Freddo_Id" Type="int" />
+    <Property Name="NoteSoddisfazioneAFreddo" Type="varchar" MaxLength="1000" />
+    <Property Name="fk_SysTras_PrioritaTicket_BM_Id" Type="int" />
+    <Property Name="NotePrioritaBM" Type="varchar" MaxLength="1000" />
+    <Property Name="DataAggiornamento" Type="smalldatetime" />
+    <Property Name="ImportoLiquidabile" Type="decimal" Precision="13" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="RealGimm_Test_AGUIARIModelStoreContainer">
+    <EntitySet Name="Comune" EntityType="Self.Comune" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FGT_TicketIntervento" EntityType="Self.FGT_TicketIntervento" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

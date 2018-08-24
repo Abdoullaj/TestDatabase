@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeographyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comune">
+    <Key>
+      <PropertyRef Name="IdComune" />
+    </Key>
+    <Property Name="IdComune" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_Provincia_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodComune" Type="varchar" MaxLength="10" />
+    <Property Name="DescComune" Type="varchar" MaxLength="100" />
+    <Property Name="CapGenerico" Type="varchar" MaxLength="5" />
+    <Property Name="CodIstat" Type="varchar" MaxLength="10" />
+    <Property Name="CodCatastale" Type="varchar" MaxLength="10" />
+    <Property Name="CodUfficioRegistro" Type="varchar" MaxLength="4" />
+    <Property Name="fk_AreaCompetenza_Id" Type="varchar" MaxLength="15" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="FGA_Lotto">
+    <Key>
+      <PropertyRef Name="IdFGA_Lotto" />
+    </Key>
+    <Property Name="IdFGA_Lotto" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="GuidLotto" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DescLotto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fk_Utente_Id" Type="varchar" MaxLength="15" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Nazione">
+    <Key>
+      <PropertyRef Name="IdNazione" />
+    </Key>
+    <Property Name="IdNazione" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodNazione" Type="varchar" MaxLength="10" />
+    <Property Name="DescNazione" Type="varchar" MaxLength="50" />
+    <Property Name="SiglaStatoNazione" Type="char" MaxLength="2" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Provincia">
+    <Key>
+      <PropertyRef Name="IdProvincia" />
+    </Key>
+    <Property Name="IdProvincia" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_Regione_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodProvincia" Type="varchar" MaxLength="4" />
+    <Property Name="DescProvincia" Type="varchar" MaxLength="50" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Regione">
+    <Key>
+      <PropertyRef Name="IdRegione" />
+    </Key>
+    <Property Name="IdRegione" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_Nazione_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodRegione" Type="varchar" MaxLength="4" />
+    <Property Name="DescRegione" Type="varchar" MaxLength="50" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Utente">
+    <Key>
+      <PropertyRef Name="IdUtente" />
+    </Key>
+    <Property Name="IdUtente" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="fk_AspNetUsers_Id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DescUtente" Type="varchar" MaxLength="1000" />
+    <Property Name="NomeUtente" Type="varchar" MaxLength="100" />
+    <Property Name="CognomeUtente" Type="varchar" MaxLength="100" />
+    <Property Name="DataInserimento" Type="datetime2" Precision="7" />
+    <Property Name="DataAggiornamento" Type="datetime2" Precision="7" />
+    <Property Name="DataCessato" Type="smalldatetime" />
+  </EntityType>
+  <Association Name="FK_Comune_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="Comune" Type="Self.Comune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="IdProvincia" />
+      </Principal>
+      <Dependent Role="Comune">
+        <PropertyRef Name="fk_Provincia_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provincia_Regione">
+    <End Role="Regione" Type="Self.Regione" Multiplicity="1" />
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regione">
+        <PropertyRef Name="IdRegione" />
+      </Principal>
+      <Dependent Role="Provincia">
+        <PropertyRef Name="fk_Regione_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Regione_Nazione">
+    <End Role="Nazione" Type="Self.Nazione" Multiplicity="1" />
+    <End Role="Regione" Type="Self.Regione" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nazione">
+        <PropertyRef Name="IdNazione" />
+      </Principal>
+      <Dependent Role="Regione">
+        <PropertyRef Name="fk_Nazione_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Utente_FGA_Lotto">
+    <End Role="Utente" Type="Self.Utente" Multiplicity="0..1" />
+    <End Role="FGA_Lotto" Type="Self.FGA_Lotto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utente">
+        <PropertyRef Name="IdUtente" />
+      </Principal>
+      <Dependent Role="FGA_Lotto">
+        <PropertyRef Name="fk_Utente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GeographyModelStoreContainer">
+    <EntitySet Name="Comune" EntityType="Self.Comune" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FGA_Lotto" EntityType="Self.FGA_Lotto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nazione" EntityType="Self.Nazione" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Regione" EntityType="Self.Regione" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utente" EntityType="Self.Utente" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comune_Provincia" Association="Self.FK_Comune_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Comune" EntitySet="Comune" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provincia_Regione" Association="Self.FK_Provincia_Regione">
+      <End Role="Regione" EntitySet="Regione" />
+      <End Role="Provincia" EntitySet="Provincia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Regione_Nazione" Association="Self.FK_Regione_Nazione">
+      <End Role="Nazione" EntitySet="Nazione" />
+      <End Role="Regione" EntitySet="Regione" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Utente_FGA_Lotto" Association="Self.fk_Utente_FGA_Lotto">
+      <End Role="Utente" EntitySet="Utente" />
+      <End Role="FGA_Lotto" EntitySet="FGA_Lotto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
