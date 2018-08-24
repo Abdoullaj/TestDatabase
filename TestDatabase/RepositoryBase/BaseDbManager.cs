@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+﻿
 
-namespace TestDatabase
+using System;
+using System.Data.Entity;
+using TestDatabase.Model;
+
+namespace TestDatabase.RepositoryBase
 {
     public class BaseDbManager<Context> :  IBaseDbManager where Context : DbContext, new()
     {

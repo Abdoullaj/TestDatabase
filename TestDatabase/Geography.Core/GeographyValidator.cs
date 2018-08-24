@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+﻿using TestDatabase.Geography.Repository;
+using TestDatabase.Model;
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Core
 {
     public class GeographyValidator
     {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+﻿using TestDatabase.Model;
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Repository
 {
     public interface IGeographyRepository
     {

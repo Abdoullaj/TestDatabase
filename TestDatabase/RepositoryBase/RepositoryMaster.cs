@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+using System.Windows.Forms;
+using TestDatabase.Geography.Repository;
+using TestDatabase.Model;
 
-namespace TestDatabase
+namespace TestDatabase.RepositoryBase
 {
     abstract class RepositoryMaster<Context, TEntityDb>
         where TEntityDb : class
@@ -41,7 +38,7 @@ namespace TestDatabase
             {
                 CompleteErrorMessage = CompleteErrorMessage + "\n" + item;
             }
-            //MessageBox.Show(CompleteErrorMessage);
+            MessageBox.Show(CompleteErrorMessage);
         }
         public string GetNewIdSistemTable(string entityName)
         {

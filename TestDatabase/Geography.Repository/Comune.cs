@@ -7,28 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Repository
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Nazione
+    public partial class Comune
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Nazione()
-        {
-            this.Regione = new HashSet<Regione>();
-        }
-    
-        public string IdNazione { get; set; }
-        public string CodNazione { get; set; }
-        public string DescNazione { get; set; }
-        public string SiglaStatoNazione { get; set; }
+        public string IdComune { get; set; }
+        public string fk_Provincia_Id { get; set; }
+        public string CodComune { get; set; }
+        public string DescComune { get; set; }
+        public string CapGenerico { get; set; }
+        public string CodIstat { get; set; }
+        public string CodCatastale { get; set; }
+        public string CodUfficioRegistro { get; set; }
+        public string fk_AreaCompetenza_Id { get; set; }
         public Nullable<System.DateTime> DataInserimento { get; set; }
         public Nullable<System.DateTime> DataAggiornamento { get; set; }
         public Nullable<System.DateTime> DataCessato { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Regione> Regione { get; set; }
+        public virtual Provincia Provincia { get; set; }
     }
 }

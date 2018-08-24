@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Repository
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Utente
+    public partial class Banca
     {
-        public string IdUtente { get; set; }
-        public string fk_AspNetUsers_Id { get; set; }
-        public string DescUtente { get; set; }
-        public string NomeUtente { get; set; }
-        public string CognomeUtente { get; set; }
+        public string IdBanca { get; set; }
+        public string CodBanca { get; set; }
+        public string DescBanca { get; set; }
+        public string fk_Nazione_Id { get; set; }
+        public string Abi { get; set; }
         public Nullable<System.DateTime> DataInserimento { get; set; }
         public Nullable<System.DateTime> DataAggiornamento { get; set; }
         public Nullable<System.DateTime> DataCessato { get; set; }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Repository
 {
     using System;
     using System.Data.Entity;

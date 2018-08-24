@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+﻿
 
-namespace TestDatabase
+using System.Linq;
+using TestDatabase.Geography.Core;
+using TestDatabase.Model;
+using TestDatabase.RepositoryBase;
+
+namespace TestDatabase.Geography.Repository
 {
     class GeographyRepository : RepositoryMaster<GeographyEntities,Comune> , IGeographyRepository
     {
@@ -49,7 +48,7 @@ namespace TestDatabase
                                 IdNazione = x.Provincia.Regione.Nazione.IdNazione,
                                 DescNazione = x.Provincia.Regione.Nazione.DescNazione
                             });
-            query1 = BuildFiltredQuery(query1, new InfoPlace() { DescProvincia = "Bologna" , DescComune = "B" });
+            query1 = BuildFiltredQuery(query1, filter);
             var result = query1.ToList();
 
         }

@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,60 +54,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banca.cs">
+    <Compile Include="Geography.Repository\Banca.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Comune.cs">
+    <Compile Include="Geography.Repository\Comune.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="FakeModels.cs" />
-    <Compile Include="GeographyConnection.Context.cs">
+    <Compile Include="Model\FakeModels.cs" />
+    <Compile Include="Geography.Repository\GeographyConnection.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeographyConnection.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="GeographyConnection.cs">
+    <Compile Include="Geography.Repository\GeographyConnection.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="GeographyConnection.Designer.cs">
+    <Compile Include="Geography.Repository\GeographyConnection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeographyConnection.edmx</DependentUpon>
     </Compile>
-    <Compile Include="GeographyRepository.cs" />
-    <Compile Include="GeographyServices.cs" />
-    <Compile Include="GeographyValidator.cs" />
-    <Compile Include="BaseDbManager.cs" />
-    <Compile Include="IBaseDbManager.cs" />
-    <Compile Include="IGeographyRepository.cs" />
-    <Compile Include="RepositoryDbManager.cs" />
-    <Compile Include="RepositoryMaster.cs" />
-    <Compile Include="Nazione.cs">
+    <Compile Include="Geography.Repository\GeographyRepository.cs" />
+    <Compile Include="Geography.Core\GeographyServices.cs" />
+    <Compile Include="Geography.Core\GeographyValidator.cs" />
+    <Compile Include="Model\InfoPlace.cs" />
+    <Compile Include="Model\ValutationResults.cs" />
+    <Compile Include="RepositoryBase\BaseDbManager.cs" />
+    <Compile Include="RepositoryBase\IBaseDbManager.cs" />
+    <Compile Include="Geography.Repository\IGeographyRepository.cs" />
+    <Compile Include="Geography.Repository\RepositoryDbManager.cs" />
+    <Compile Include="RepositoryBase\RepositoryMaster.cs" />
+    <Compile Include="Geography.Repository\Nazione.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Operation.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\Operation.cs" />
+    <Compile Include="Geogrphy\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provincia.cs">
+    <Compile Include="Geography.Repository\Provincia.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Regione.cs">
+    <Compile Include="Geography.Repository\Regione.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Utente.cs">
+    <Compile Include="Geography.Repository\Utente.cs">
       <DependentUpon>GeographyConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="GeographyConnection.edmx">
+    <EntityDeploy Include="Geography.Repository\GeographyConnection.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GeographyConnection.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GeographyConnection.edmx.diagram">
+    <None Include="Geography.Repository\GeographyConnection.edmx.diagram">
       <DependentUpon>GeographyConnection.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -115,16 +117,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GeographyConnection.Context.tt">
+    <Content Include="Geography.Repository\GeographyConnection.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GeographyConnection.edmx</DependentUpon>
       <LastGenOutput>GeographyConnection.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="GeographyConnection.tt">
+    <Content Include="Geography.Repository\GeographyConnection.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GeographyConnection.edmx</DependentUpon>
       <LastGenOutput>GeographyConnection.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

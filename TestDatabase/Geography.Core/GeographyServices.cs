@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestDatabase.FakeModels;
+﻿
+using TestDatabase.Geography.Repository;
+using  TestDatabase.Model;
 
-namespace TestDatabase
+namespace TestDatabase.Geography.Core
 {
     public class GeographyServices
     {
@@ -36,13 +33,11 @@ namespace TestDatabase
 
             if (validation.valutationResult == true)
             {
-                // test 1°
-                //db.Entry(comune).State = EntityState.Modified;
+                // update 1°
+                //db.Attach(comune) ecc...
 
-                //test 2°
-                Comune temp = new Comune() { IdComune = comune.IdComune, CodIstat = comune.CodIstat };
-                _db.GeographyRepository.UpdateRecord(temp);
-                temp = comune;
+                //update 2°
+                _db.GeographyRepository.UpdateRecord(comune);
                 _db.SaveChanges();
             }
             else
@@ -66,9 +61,9 @@ namespace TestDatabase
             }
         }
 
-        public void Search()
+        public void Search(InfoPlace filter)
         {
-            _db.GeographyRepository.Search(new InfoPlace() { DescComune = "Bar" });
+            _db.GeographyRepository.Search(filter);
         }
     }
 }

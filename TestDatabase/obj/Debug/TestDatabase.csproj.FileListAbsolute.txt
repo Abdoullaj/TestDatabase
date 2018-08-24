@@ -22,3 +22,15 @@ C:\Users\lay\source\repos\RealGimm_Repo\TestDatabase\TestDatabase\obj\Debug\Test
 C:\Users\lay\source\repos\RealGimm_Repo\TestDatabase\TestDatabase\obj\Debug\TestDatabase.exe
 C:\Users\lay\source\repos\RealGimm_Repo\TestDatabase\TestDatabase\obj\Debug\TestDatabase.pdb
 C:\Users\lay\source\repos\RealGimm_Repo\TestDatabase\TestDatabase\obj\Debug\TestDatabase.csprojResolveAssemblyReference.cache
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\obj\Debug\TestDatabase.csprojResolveAssemblyReference.cache
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\obj\Debug\TestDatabase.csproj.CoreCompileInputs.cache
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\obj\Debug\TestDatabase.exe
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\obj\Debug\TestDatabase.pdb
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\TestDatabase.exe.config
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\TestDatabase.exe
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\TestDatabase.pdb
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\EntityFramework.dll
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\EntityFramework.xml
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lay\source\repos\RealGimm_Repo\TestDatabaseServiziPrivati\TestDatabase\obj\Debug\TestDatabase.csproj.CopyComplete
